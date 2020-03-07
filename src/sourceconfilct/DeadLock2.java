@@ -35,6 +35,9 @@ public class DeadLock2 {
 
                 synchronized ("A"){
                     System.out.println("B线程同时持有了A锁和B锁");
+
+                    //等待A锁的所有线程
+                    "A".notifyAll();
                 }
             }
         };
